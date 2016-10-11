@@ -11,6 +11,19 @@
   <h1>My name is: {{ name }}</h1>
 
 
+    <form name="myForm">
+      <label for="singleSelect">Select One: </label>
+      <select ng-model="value">
+        <option value="Cats">Cats</option>
+        <option value="Dogs">Dogs</option>
+        <option value="Cats and Dogs">Cats and Dogs</option>
+        <option value="NOTHING. im a miserable wretch.">Neither</option>
+      </select>
+    </form>
+
+  <h3>I love: {{ value }}</h3>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 </body>
 </html>
