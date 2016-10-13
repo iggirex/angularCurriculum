@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  {{2+2}}
+  <div ng-controller="myFirstController">
+    <h1>My name is: {{name}}, my fav color is: {{favColor}}</h1>
+    <input ng-model="name" type="text" placeholder="What is your name"></input>
+    <h3>{{secondsInACentury | number}}</h3>
+    <h1>The time right now is: {{rightNow | date: "EEEE, MMMM d, y"}}</h1><hr>
+  </div>
+  <div ng-controller="exercisesController">
+    <h1>My fav color is: {{favColor}}</h1>
+  </div><hr>
+
+  <script>
+    function emptyThis(){
+      setTimeOut()
+    }
+  </script>
+
+  <div id="formContainer">
+    <h1>Time for MAD LIBS!</h1>
+    <form>
+    <label>Boy's name</label></br>
+      <input type="text" ng-model="form.boyName"></input></br>
+    <label>Adjective</label></br>
+      <input type="text" ng-model="form.adj"></input></br>
+    <label>Plural Noun</label></br>
+      <input type="text" ng-model="form.pn1"></input></br>
+    <label>Plural Noun</label></br>
+      <input type="text" ng-model="form.pn2"></input></br>
+    <label>An insect, plural</label></br>
+      <input type="text" ng-model="form.insect"></input></br>
+    <label>Plural Noun</label></br>
+      <input type="text" ng-model="form.pn3"></input></br>
+    <label>A verb ending in "s"</label></br>
+      <input type="text" ng-model="form.verb"></input></br>
+      <button ng-init="checker=false" ng-click="checker=!checker">Generate</button>
+    </form>
+</div>
+<h1>MadLibs Generator</h1>
+<div style="width: 500px">
+  <h2 ng-show="checker"> I'm in love with {{form.boyName | uppercase}}. He's so {{form.adj| uppercase}}!He has big fat {{form.pn1| uppercase}}, and when our {{form.pn2| uppercase}} meet, I get {{form.insect| uppercase}} in my stomach. I've fallen for him like a ton of {{form.pn3| uppercase}}, and he {{form.verb| uppercase}} me, too. But I think he's got another girlfriend. What should I do?
+    <button ng-click="form=null; checker=!checker">Play Again</button>
+  </h2>
+</div>
+
+</body>
+</html>
