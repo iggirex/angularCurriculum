@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contacts">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .card {
+    border-style: solid;
+    border-width: 2px;
+    /*padding-top: 10px;
+    padding-bottom: 10px;*/
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    /*padding-left:  50px;*/
+    margin-bottom: 4px;
+  }
+  .formStyle {
+    margin: 40px;
+  }
+
+  </style>
+</head>
+<body>
+<div ng-controller="myCtrl" class="formStyle">
+  <form ng-submit="submitEntry(form); clearOut(form)"  >
+    <label for="">Name</label>
+    <input ng-model="form.name" type="text" minlength:1>
+    <label for="">Email</label>
+    <input ng-model="form.email" type="text">
+    <label for="">Phone</label>
+    <input ng-model="form.phone" type="text">
+    <input type="submit">Add Contact</input>
+    <label for="" id="search">Search</label>
+    <input type="text">
+  </form></br>
+  <div ng-repeat="thing in collection track by $index" class="card">
+  </br>
+    <div>
+      <div>Name:{{thing.name}}</div>
+      <div>email:{{thing.email}}</div>
+      <div>phone:{{thing.phone}}</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("search").onkeyup = function(){
+    search();
+  }
+</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="contacts.js"></script>
+</body>
+</html>
