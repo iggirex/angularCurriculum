@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .container {
+    width: 60%;
+    height: 100%;
+  }
+  .left {
+    width: 44%;
+    height: 300px;
+    background-color: PapayaWhip;
+    display: inline-block;
+    color: white;
+    font-size: 200px;
+    font-family: monospace;
+    text-align: center;
+
+  }
+  .right {
+    width: 44%;
+    height: 300px;
+    background-color: PapayaWhip;
+    display: inline-block;
+    color: white;
+    font-size: 200px;
+    font-family: monospace;
+    text-align: center;
+
+  }
+  .title {
+    text-align: center;
+  }
+  .player {
+    height: 30px;
+    font-size: 30px;
+  }
+  .serving {
+    height: 50px;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .won {
+    background-color: green;
+  }
+
+  </style>
+</head>
+<body>
+  <div ng-controller="myCtrl">
+  <h3> The number is: {{view.number}}</h3>
+  <button ng-click="pickRandomNumber()">Pick Random Number</button>
+</div></br><hr>
+
+<div ng-controller="reverseCtrl">
+  <input type="text" ng-model="viewRev.stringReverse">
+  <h3>Your word is: {{viewRev.stringReverse}}</h3>
+  <button ng-click="reverse()">Reverse This</button>
+</div></br><hr>
+
+
+<div ng-controller="pongCtrl" class="container">
+  <div class="title">PingPong Score Keeper</div>
+  <div class="scoreContainer" >
+    <div class="left" ng-click="leftScoreIncrease()">
+      <div class="player">Player1</div>
+      <div>{{pong.leftScore}}</div>
+      <div class="serving">serving</div></div>
+    <div class="right" ng-click="rightScoreIncrease()">
+      <div class="player">Player2</div>
+      <div>{{pong.rightScore}}</div>
+      <div class="serving">serving</div></div>
+  </div>
+  <button ng-click="reset()">Reset</button>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
