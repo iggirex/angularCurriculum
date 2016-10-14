@@ -28,13 +28,10 @@ app.controller("pongCtrl", function($scope){
   $scope.leftScoreIncrease = function(){
     if($scope.pong.leftScore < 10){
     $scope.pong.leftScore++
-    counter++
-      if(counter % 3 === 0){
-        $scope.pong.leftServeStyle = false;
-        $scope.pong.rightServeStyle = true;
-      } else {
-        $scope.pong.leftServeStyle = true;
-        $scope.pong.rightServeStyle = false;
+    counter+= 1
+      if(counter % 2 === 0){
+        $scope.pong.leftServeStyle = !$scope.pong.leftServeStyle
+        $scope.pong.rightServeStyle = !$scope.pong.rightServeStyle
       }
   } else{
     $scope.pong.leftScore = 11;
@@ -45,13 +42,10 @@ app.controller("pongCtrl", function($scope){
   $scope.rightScoreIncrease = function(){
     if($scope.pong.rightScore < 10){
     $scope.pong.rightScore++
-    counter++
-    if(counter % 3 === 0){
-      $scope.pong.rightServeStyle = true;
-      $scope.pong.leftServeStyle = false;
-    } else {
-      $scope.pong.rightServeStyle = false;
-      $scope.pong.leftServeStyle = true;
+    counter+= 1
+    if(counter % 2 === 0){
+      $scope.pong.leftServeStyle = !$scope.pong.leftServeStyle
+      $scope.pong.rightServeStyle = !$scope.pong.rightServeStyle
     }
   } else{
     $scope.pong.rightScore = 11;
@@ -59,6 +53,7 @@ app.controller("pongCtrl", function($scope){
     $scope.pong.leftLose = true;
   };
 };
+//below can i refactor $scope.pong to = null??
   $scope.reset = function(){
     $scope.pong.leftScore = 0;
     $scope.pong.rightScore = 0;

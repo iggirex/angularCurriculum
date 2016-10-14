@@ -81,7 +81,7 @@
     <div class="right" ng-click="rightScoreIncrease()" ng-class="{'rightWon': pong.rightWon, 'rightLose': pong.rightLose}">
       <div class="player">Player2</div>
       <div>{{pong.rightScore}}</div>
-      <div class="serving" ng-show="pong.rightServeStyle">serving</div></div>
+      <div class="serving" ng-show="!pong.rightServeStyle">serving</div></div>
   </div>
   <button ng-click="reset()">Reset</button>
 </div>
