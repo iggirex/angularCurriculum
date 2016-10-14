@@ -16,7 +16,7 @@
     background-color: PapayaWhip;
     display: inline-block;
     color: white;
-    font-size: 200px;
+    font-size: 100px;
     font-family: monospace;
     text-align: center;
 
@@ -27,25 +27,33 @@
     background-color: PapayaWhip;
     display: inline-block;
     color: white;
-    font-size: 200px;
+    font-size: 100px;
     font-family: monospace;
     text-align: center;
 
   }
   .title {
     text-align: center;
+    font-size: 25px;
   }
   .player {
     height: 30px;
     font-size: 30px;
   }
   .serving {
-    height: 50px;
     font-size: 30px;
-    margin-bottom: 10px;
   }
-  .won {
+  .rightWon {
     background-color: green;
+  }
+  .leftWon {
+    background-color: green;
+  }
+  .rightLose {
+    background-color: red;
+  }
+  .leftLose {
+    background-color: red;
   }
 
   </style>
@@ -66,14 +74,14 @@
 <div ng-controller="pongCtrl" class="container">
   <div class="title">PingPong Score Keeper</div>
   <div class="scoreContainer" >
-    <div class="left" ng-click="leftScoreIncrease()">
+    <div class="left" ng-click="leftScoreIncrease()" ng-class="{'leftWon': pong.leftWon, 'leftLose': pong.leftLose}">
       <div class="player">Player1</div>
       <div>{{pong.leftScore}}</div>
-      <div class="serving">serving</div></div>
-    <div class="right" ng-click="rightScoreIncrease()">
+      <div class="serving" ng-show="pong.leftServeStyle">serving</div></div>
+    <div class="right" ng-click="rightScoreIncrease()" ng-class="{'rightWon': pong.rightWon, 'rightLose': pong.rightLose}">
       <div class="player">Player2</div>
       <div>{{pong.rightScore}}</div>
-      <div class="serving">serving</div></div>
+      <div class="serving" ng-show="pong.rightServeStyle">serving</div></div>
   </div>
   <button ng-click="reset()">Reset</button>
 </div>
