@@ -26,17 +26,17 @@
 <body>
 <div ng-controller="myCtrl" class="formStyle">
   <form ng-submit="submitEntry(form); clearOut(form)"  >
-    <label for="">Name</label>
+    <label>Name</label>
     <input ng-model="form.name" type="text" minlength:1>
-    <label for="">Email</label>
+    <label>Email</label>
     <input ng-model="form.email" type="text">
-    <label for="">Phone</label>
+    <label>Phone</label>
     <input ng-model="form.phone" type="text">
     <input type="submit">Add Contact</input>
-    <label for="" id="search">Search</label>
-    <input type="text">
+    <label >Search</label>
+    <input type="text" id="search" ng-model="query">
   </form></br>
-  <div ng-repeat="thing in collection track by $index" class="card">
+  <div ng-repeat="thing in collection | filter: query track by $index" class="card">
   </br>
     <div>
       <div>Name:{{thing.name}}</div>
@@ -46,11 +46,11 @@
   </div>
 </div>
 
-<script>
+<!-- <script>
   document.getElementById("search").onkeyup = function(){
     search();
   }
-</script>
+</script> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
   <script src="contacts.js"></script>

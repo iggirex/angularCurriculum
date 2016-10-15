@@ -10,5 +10,5 @@ app.controller("myCtrl", function($scope){
   $scope.clearOut = function(form){
     $scope.form= null;
   };
-  $scope.
+  // $scope.
 });
