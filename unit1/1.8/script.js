@@ -1,7 +1,4 @@
 var app = angular.module("myApp", [])
-function alert(){
-  console.log("yo alert works floarting out on its own")
-}
 app.controller("myCtrl", function($scope){
   $scope.view = {};
   $scope.view.number= 4;
