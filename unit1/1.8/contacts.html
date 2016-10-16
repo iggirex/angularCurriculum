@@ -33,7 +33,7 @@
     <label>Phone</label>
     <input ng-model="form.phone" type="text">
     <input type="submit">Add Contact</input>
-    <label >Search</label>
+    <label>Search</label>
     <input type="text" id="search" ng-model="query">
   </form></br>
   <div ng-repeat="thing in collection | filter: query track by $index" class="card">
