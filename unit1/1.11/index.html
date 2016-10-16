@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="redditClone">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="width: 90%; margin: 0 auto; background-color: papayawhip">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Reddit Clone</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" ng-model="query">
+            </div>
+            <select name="" id="" ng-model="dropSelect">
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="-votes">Votes</option>
+            </select>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="#" id="myBtn">New Post</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+  <!-- The Modal -->
+  <div ng-controller="myCtrl">
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Make Post</h4>
+        </div>
+        <div>
+          <form ng-submit="submitPost(form)">
+            <div class="form-group">
+              <label class="control-label">Title:</label>
+              <input ng-model="form.title" class="form-control input-sm" type="text" id="inputSmall">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Author:</label>
+              <input ng-model="form.author" class="form-control input-sm" type="text" id="inputSmall">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Image Url:</label>
+              <input ng-model="form.image" class="form-control input-sm" type="text" id="inputSmall">
+            </div>
+            <div class="form-group">
+              <label class="control-label">Description:</label>
+              <input ng-model="form.description" class="form-control input-sm" type="text" id="inputSmall">
+            </div>
+            <input type="submit" data-dismiss="modal" class="btn btn-default">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-repeat="post in posts | filter: query | orderBy: dropSelect">
+    </br>
+      <div class="card">
+        <img ng-src="{{post.image}}" class="img">
+        <div class="infoContainer">
+          <div>Title:{{post.title}}</div>
+          <div>Author:{{post.author}}</div>
+        </div>
+        <div class="voteContainer">
+          <div ng-click="upVote(post)" style="height: 50px; width: 50px; background-color: olivedrab"> &#128077;</div>
+          <div>{{post.votes}}</div>
+          <div ng-click="downVote(post)" style="height: 50px; width: 50px; background-color: firebrick">&#128078;</div>
+        </div>
+        <div ng-click="seeComments()">comments</div>
+        <div>Add comment</div>
+        <form action="">
+          <label for="">user:<input type="text"></label>
+          <label for="">comment:<input type="text"></label>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script src="modalLogic.js">
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>

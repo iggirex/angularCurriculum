@@ -1,0 +1,19 @@
+#myModal {
+  padding: 20px;
+}
+.img {
+  height: 100px;
+  width: 120px;
+  display:inline-block;
+}
+.card {
+  border: 1px solid black;
+  width: 100%;
+}
+.infoContainer {
+  display: inline-block;
+}
+.voteContainer {
+  display: inline-block;
+  float: right;
+}
