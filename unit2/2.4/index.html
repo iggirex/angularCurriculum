@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="name">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+<body>
+{{1}}
+<p>{{"Iggi-is-_the_bestyest_of-alltimes" | camel}}</p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<script>
+var app = angular.module("name", [])
+
+//custom filters need to return a function which takes 1 argument.
+app.filter('kebab', function(){
+  return function(input){
+    if(typeof input === "string"){
+      return input.replace(/_/g , "-");
+    } else {
+      return input
+    }
+  }
+})
+app.filter('camel', function(){
+  return function(input){
+    // console.log(input.split(/-\_/g))
+    return input
+    .split(/[-\_]/)
+    .map(function(s){
+      // console.log(s)
+      return s.slice(0,1).toUpperCase() + s.slice(1)
+    })
+    .join("")
+  }
+})
+</script>
+</body>
+</html>
