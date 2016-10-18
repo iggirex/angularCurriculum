@@ -1,0 +1,1 @@
+Asynchronous calls will mess with angular's under-the-hood $apply/$$watch/$digest cycle. So we can manually apply these commands, $digest will watch and update a variable in its local scope, while $apply will through through every possible scope down the $rootScope 
