@@ -1,9 +1,11 @@
 angular.module("movieApp")
-.controller("movieCtrl", function($scope, $http){
+.controller("movieCtrl", function($scope, $http, $routeParams){
   console.log("in movieCtrl")
+  $scope.view = {}
   $http.get("http://www.omdbapi.com/?t=" + $routeParams.id)
   .then(function(data){
     console.log(data)
+    $scope.view.data = data;
   })
 })
 .controller("homeCtrl", function($scope, $location, $rootScope){

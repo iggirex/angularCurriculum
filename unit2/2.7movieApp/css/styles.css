@@ -1,0 +1,39 @@
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: 20000;
+  font-family: Trebuchet MS;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+}
+.col {
+  margin: 20px;
+  /*display: inline-block;
+  padding: 20px;
+  margin-right: -15px;*/
+}
+.leftCol {
+  /*display: inline-block;*/
+
+}
+.rightCol {
+  /*display: inline-block;*/
+  width: 500px;
+}
+.content {
+  font-family: Trebuchet MS;
+  font-size: 18px;
+}
+.main {
+  font-size: 70px;
+}
+.form {
+  text-align: center;
+}
+.card:hover {
+  /*box-shadow: -7px -9px 5px 0px rgba(161,225,230,1);*/
+  border: solid teal;
+  border-style: ridge;
+}

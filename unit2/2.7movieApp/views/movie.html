@@ -1,18 +1,23 @@
-<h1>Movie View</h1>
-<div>Title: {{view.data.data.Title}}</div>
-<div>Year: {{view.data.data.Year}}</div>
-<div>Rated: {{view.data.data.Rated}}</div>
-<div>Released: {{view.data.data.Released}}</div>
-<div>Runtime: {{view.data.data.Runtime}}</div>
-<div>Genre: {{view.data.data.Genre}}</div>
-<div>Director: {{view.data.data.Director}}</div>
-<div>Writer: {{view.data.data.Writer}}</div>
-<div>Actors: {{view.data.data.Actors}}</div>
-<div>Plot: {{view.data.data.Plot}}</div>
-<div>Language: {{view.data.data.Language}}</div>
-<div>Country: {{view.data.data.Country}}</div>
-<div>Awards: {{view.data.data.Awards}}</div>
-<div>Poster: {{view.data.data.Poster}}</div>
-<div>Metascore: {{view.data.data.Metascore}}</div>
-<div>imdbVotes: {{view.data.data.imdbVotes}}</div>
-<div>imdbID: {{view.data.data.imdbID}}</div>
+<h2 class="title">Title: {{view.data.data.Title}}</h2>
+<div class="parent">
+    <div class="col leftCol">
+      <img src={{view.data.data.Poster}}>
+    </div>
+    <div class="col rightCol">
+      <div class="content">Year: {{view.data.data.Year}}</div>
+      <div class="content">Rated: {{view.data.data.Rated}}</div>
+      <div class="content">Released: {{view.data.data.Released}}</div>
+      <div class="content">Runtime: {{view.data.data.Runtime}}</div>
+      <div class="content">Genre: {{view.data.data.Genre}}</div>
+      <div class="content">Director: {{view.data.data.Director}}</div>
+      <div class="content">Writer: {{view.data.data.Writer}}</div>
+      <div class="content">Actors: {{view.data.data.Actors}}</div>
+      <div class="content">Plot: {{view.data.data.Plot}}</div>
+      <div class="content">Language: {{view.data.data.Language}}</div>
+      <div class="content">Country: {{view.data.data.Country}}</div>
+      <div class="content">Awards: {{view.data.data.Awards}}</div>
+      <div class="content">Metascore: {{view.data.data.Metascore}}</div>
+      <div class="content">imdbVotes: {{view.data.data.imdbVotes}}</div>
+      <div class="content">imdbID: {{view.data.data.imdbID}}</div>
+    </div>
+  </div>

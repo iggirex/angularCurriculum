@@ -1,23 +1,8 @@
-<!-- {{view.data}} -->
-<!-- <div ng-repeat="movie in view.data.data.Search">{{movie}}<hr></div> -->
-
-<!-- <div class="list-group" ng-repeat="movie in view.data.data.Search">
-  <a href="#" class="list-group-item">
-    <h4 class="list-group-item-heading">{{movie.Title}}</h4>
-    <p class="list-group-item-text">Year: {{movie.Year}}</p>
-  </a>
-  <a href="#" class="list-group-item">
-    <img src={{movie.Poster}} style="height:100px;">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-  </a>
-</div> -->
-<p>inside movie results</p>
 <div style="width: 80%; margin: 0 auto;">
-  <div class="panel panel-primary" ng-repeat="movie in view.data.data.Search" style="width:300px; height: 200px; display: inline-block; margin: 10px; vertical-align: top;">
+  <div class="panel panel-primary card" ng-repeat="movie in view.data.data.Search" style="width:300px; height: 200px; display: inline-block; margin: 10px; vertical-align: top;" ng-click="movieDetails(movie.Title)">
     <div class="panel-heading">
 
-      <div class="panel-title" ng-model="title" ng-click="movieDetails(movie.Title)">{{movie.Title}}</div>
+      <div class="panel-title" ng-model="title">{{movie.Title}}</div>
 
     </div>
     <div class="panel-body">
