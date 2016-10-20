@@ -1,26 +1,29 @@
 angular.module("movieApp")
 .controller("movieCtrl", function($scope, $http){
-  $scope.view = {}
-  console.log("inside my controller")
-  $http.get("http://www.omdbapi.com/?t=star&y=&plot=short&r=json")
+  console.log("in movieCtrl")
+  $http.get("http://www.omdbapi.com/?t=" + $routeParams.id)
   .then(function(data){
     console.log(data)
-    $scope.view.data = data
   })
 })
 .controller("homeCtrl", function($scope, $location, $rootScope){
-  console.log($scope.itemForSearch)
-  $rootScope.itemForSearch = $scope.itemForSearch
+  console.log("in homeCTRL")
+  // $rootScope.itemForSearch = $scope.itemForSearch
   $scope.searchThis = function(){
     $location.path("movieResults/" + $scope.itemForSearch)
   }
 })
-.controller("movieResCtrl", function($scope, $http, $rootScope){
+.controller("movieResCtrl", function($scope, $http, $routeParams, $location){
+  console.log("in movie RESULTS ctrl")
   $scope.view = {}
-console.log("getting $scope.itemForSearch", $rootScope.itemForSearch)
-  $http.get("http://www.omdbapi.com/?" + $rootScope.itemForSearch)
+// console.log("getting $scope.itemForSearch", $rootScope.itemForSearch)
+  $http.get("http://www.omdbapi.com/?s=" + $routeParams.id)
   .then(function(data){
     console.log(data)
     $scope.view.data = data
   })
+  $scope.movieDetails = function(movie){
+    console.log("getting movie.title piped in:", movie)
+    $location.path("movie/" + movie)
+  }
 })

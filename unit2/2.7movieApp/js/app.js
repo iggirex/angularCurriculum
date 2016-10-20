@@ -5,7 +5,7 @@ angular.module("movieApp", ["ngRoute"])
     templateUrl: "views/home.html",
     controller: "homeCtrl"
   })
-  .when("/movieResults/id:", {
+  .when("/movieResults/:id", {
     templateUrl: "views/movieResults.html",
     controller: "movieResCtrl"
   })
