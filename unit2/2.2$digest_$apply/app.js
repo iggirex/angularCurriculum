@@ -4,8 +4,7 @@ angular.module("applydigest", []).controller("MainController", function($rootSco
   $scope.view = {};
   $scope.view.age = 3;
 
-  // this is for example purposes
-  // NOTE - there is a $timeout which handles $apply for you
+  // there is a $timeout which handles $apply for you
   setTimeout(function() {
     $rootScope.rootView.name = "Lassie";
     $scope.view.age = 10;
