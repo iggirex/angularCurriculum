@@ -8,7 +8,7 @@ angular.module("movieApp")
     $scope.view.data = data;
   })
 })
-.controller("homeCtrl", function($scope, $location, $rootScope){
+  .controller("homeCtrl", function($scope, $location, $rootScope){
   console.log("in homeCTRL")
   // $rootScope.itemForSearch = $scope.itemForSearch
   $scope.searchThis = function(){
