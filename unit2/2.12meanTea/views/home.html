@@ -1,0 +1,41 @@
+<h1>MEAN Tea</h1>
+<form action="" ng-submit>
+  <h2>Search for a tea  <input type="text"></h2>
+</form>
+<span>Search By:</span>
+<select name="" id="">
+  <option value="price">price</option>
+  <option value="rating">rating</option>
+  <option value="caffeineScale">caffeineScale</option>
+
+</select>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <!-- <th>#</th> -->
+      <th></th>
+      <th>Tea</th>
+      <th>Price</th>
+
+      <th>Ingredients</th>
+      <th>Rating</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="tea in view.teas">
+      <td><img src="{{tea.imageUrl}}" alt=""></td>
+      <td>{{tea.name}}</td>
+      <td>{{tea.price / 100 | currency}}</td>
+      <td>{{tea.ingredients}}</td>
+      <td>{{tea.rating}}</td>
+    </tr>
+    <!-- <tr>
+      <td>2</td>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+    </tr> -->
+
+  </tbody>
+</table>
